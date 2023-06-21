@@ -1,11 +1,12 @@
 export class Money {
   amount: number;
+  className: string;
 
   constructor(amount: number) {
     this.amount = amount;
   }
 
-  equals(object: Money) {
-    return this.amount === object.amount;
+  equals(object: any) {
+    return this.amount === object.amount && this.className === object.className;
   }
 }
