@@ -1,6 +1,7 @@
 export class Money {
-  amount: number;
-  className: string;
+  protected amount: number;
+
+  protected className: string;
 
   constructor(amount: number) {
     this.amount = amount;
