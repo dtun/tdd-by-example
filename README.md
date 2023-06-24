@@ -30,6 +30,6 @@
 
 ✔️ Compare Francs to Dollars
 
-✖️ Currency?
+✔️ Currency?
 
 ✖️ Delete testFrancMultiplication?

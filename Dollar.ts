@@ -1,5 +1,3 @@
 import { Money } from './Money';
 
-export class Dollar extends Money {
-  className = 'Dollar';
-}
+export class Dollar extends Money {}
