@@ -1,6 +1,3 @@
-import { Dollar } from '.';
-import { Franc } from '.';
-
 export class Money {
   protected amount: number;
 
@@ -16,11 +13,11 @@ export class Money {
   }
 
   dollar(amount: number): Money {
-    return new Dollar(amount, 'USD');
+    return new Money(amount, 'USD');
   }
 
   franc(amount: number): Money {
-    return new Franc(amount, 'CHF');
+    return new Money(amount, 'CHF');
   }
 
   times(multiplier: number): Money {
