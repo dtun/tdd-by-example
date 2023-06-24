@@ -26,7 +26,7 @@
 
 ✔️ Common equals
 
-✖️ Common times
+✔️ Common times
 
 ✔️ Compare Francs to Dollars
 
