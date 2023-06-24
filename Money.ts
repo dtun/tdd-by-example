@@ -1,10 +1,10 @@
 export class Money {
   protected amount: number;
 
-  protected currency: string;
+  protected currency?: string;
 
-  constructor(amount: number, currency: string) {
-    this.amount = amount;
+  constructor(amount?: number, currency?: string) {
+    this.amount = amount || 0;
     this.currency = currency;
   }
 
