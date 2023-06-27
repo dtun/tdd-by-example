@@ -1,7 +1,9 @@
-export class Money {
-  protected amount: number;
+import { Expression, Sum } from '.';
 
-  protected currency?: string;
+export class Money implements Expression {
+  public amount: number;
+
+  public currency?: string;
 
   constructor(amount?: number, currency?: string) {
     this.amount = amount || 0;
@@ -22,5 +24,13 @@ export class Money {
 
   times(multiplier: number): Money {
     return new Money(this.amount * multiplier, this.currency);
+  }
+
+  plus(addend: Money): Sum {
+    return new Sum(this, addend);
+  }
+
+  reduce(to: string): Money {
+    return this;
   }
 }
