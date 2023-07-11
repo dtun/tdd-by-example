@@ -18,6 +18,14 @@ test('reduce', () => {
   expect(result.equals(money.dollar(1))).toBe(true);
 });
 
+test('conversion', () => {
+  bank.addRate('CHF', 'USD', 2);
+
+  const result = bank.reduce(money.franc(2), 'USD');
+
+  expect(result.equals(money.dollar(1))).toBe(true);
+});
+
 test('multiplication', () => {
   expect(money.dollar(5).times(2).equals(money.dollar(10))).toBe(true);
   expect(money.dollar(5).times(3).equals(money.dollar(15))).toBe(true);
