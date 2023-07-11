@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals';
-import { Money, Bank, Sum } from '.';
+import { Money, Bank, Sum, Expression } from '.';
 
 const money = new Money();
 const bank = new Bank();
@@ -10,6 +10,15 @@ test('addition', () => {
   const reduced = bank.reduce(sum, 'USD');
 
   expect(reduced.equals(money.dollar(10))).toBe(true);
+});
+
+test('mixed addition', () => {
+  const fiveBucks: Expression = money.dollar(5);
+  const tenFrancs: Expression = money.franc(10);
+  bank.addRate('CHF', 'USD', 2);
+  const result = bank.reduce(fiveBucks.plus(tenFrancs), 'USD');
+
+  expect(result.equals(money.dollar(10))).toBe(true);
 });
 
 test('reduce', () => {
