@@ -19,4 +19,15 @@ export class Sum implements Expression {
   plus(addend: Expression) {
     return new Sum(this, addend);
   }
+
+  times(multiplier: number) {
+    return new Sum(
+      this.augend.times(multiplier),
+      this.addend.times(multiplier)
+    );
+  }
+
+  equals(object: any) {
+    return false; // Stubbed for future implementation
+  }
 }
