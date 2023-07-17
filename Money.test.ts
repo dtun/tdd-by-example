@@ -16,7 +16,8 @@ test('mixed addition', () => {
   const fiveBucks: Expression = money.dollar(5);
   const tenFrancs: Expression = money.franc(10);
   bank.addRate('CHF', 'USD', 2);
-  const result = bank.reduce(fiveBucks.plus(tenFrancs), 'USD');
+  const sum = new Sum(fiveBucks, tenFrancs);
+  const result = bank.reduce(sum, 'USD');
 
   expect(result.equals(money.dollar(10))).toBe(true);
 });
